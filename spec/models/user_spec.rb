@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create!(email: "johnsnow@gmail.com", password: "winteriscoming") }
+  let(:user) { User.create!(name: "john snow", email: "johnsnow@gmail.com", password: "winteriscoming") }
+  
+  # Name Validation
+  it { should validate_presence_of(:name) }
+  it { should validate_length_of(:name).is_at_least(1) }
   
   # Email validations
   it { should validate_presence_of(:email) }
@@ -15,6 +19,10 @@ RSpec.describe User, type: :model do
   it { should validate_length_of(:password).is_at_least(8) }
   
   describe "attributes" do
+    it "should respond to name" do
+      expect(user).to respond_to(:name)
+    end
+    
     it "should respond to email" do
       expect(user).to respond_to(:email)
     end
