@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Registered Applications</h1>
+<div class="container">
+<h1><%= @user.name %>'s Registered Applications</h1>
 
 <table>
   <thead>
@@ -12,6 +11,7 @@
   <tbody>
     <% @registered_applications.each do |registered_application| %>
       <tr>
+        <td><%= registered_application.name %></td>
         <td><%= link_to 'Show', registered_application %></td>
         <td><%= link_to 'Edit', edit_registered_application_path(registered_application) %></td>
         <td><%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +22,5 @@
 
 <br>
 
-<%= link_to 'New Registered application', new_registered_application_path %>
+<%= link_to "Add New Application", new_registered_application_path, class: 'btn btn-primary' %>
+</div>
