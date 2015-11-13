@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   
-  validates :name, presence: true, length: { minimum: 1 }       
+  validates :name, on: :create, on: :update, presence: true, length: { minimum: 1 }       
   validates :email,
             presence: true,
             uniqueness: { case_sensitive: false },
