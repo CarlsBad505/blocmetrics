@@ -1,7 +1,7 @@
 <%= form_for(@registered_application) do |f| %>
   <% if @registered_application.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@registered_application.errors.count, "error") %> prohibited this registered_application from being saved:</h2>
+      <h2><%= pluralize(@registered_application.errors.count, "error") %> prohibited your application from being saved:</h2>
 
       <ul>
       <% @registered_application.errors.full_messages.each do |message| %>
@@ -13,12 +13,12 @@
 
   
   <div class="field">
-    <%= f.label :name %>:<br />
+    <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
   
   <div class="field">
-    <%= f.label :url %>:<br />
+    <%= f.label :url %><br />
     <%= f.text_field :url, autocomplete: "off"%>
   </div>
   <br>

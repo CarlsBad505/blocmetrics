@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   
   has_many :registered_applications
   
-  validates :name, presence: true, length: { minimum: 1 }       
+  validates :name, on: [:create, :update], presence: true, length: { minimum: 1 }       
   validates :email,
             presence: true,
             uniqueness: { case_sensitive: false },

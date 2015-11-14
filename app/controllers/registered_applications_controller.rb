@@ -5,7 +5,7 @@ class RegisteredApplicationsController < ApplicationController
   # GET /registered_applications.json
   def index
     @user = current_user
-    @registered_applications = @user.registered_applications.all
+    @registered_applications = @user.registered_applications
   end
 
   # GET /registered_applications/1
