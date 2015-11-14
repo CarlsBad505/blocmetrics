@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
-  
+
+  has_many :registered_applications
+
   validates :name, on: [:create, :update], presence: true, length: { minimum: 1 }       
   validates :email,
             presence: true,
