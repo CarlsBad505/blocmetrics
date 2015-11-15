@@ -12,6 +12,7 @@ class RegisteredApplicationsController < ApplicationController
   # GET /registered_applications/1.json
   def show
     @registered_application = RegisteredApplication.find(params[:id])
+    @events = @registered_application.events.group_by { |e| e.name }
   end
 
   # GET /registered_applications/new

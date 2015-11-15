@@ -1,5 +1,6 @@
 class RegisteredApplication < ActiveRecord::Base
   belongs_to :user
+  has_many :events
   
   URL_REGEX = /(\S+\.(com|net|org|edu|gov)(\/\S+)?)/ # Double check this regex
   

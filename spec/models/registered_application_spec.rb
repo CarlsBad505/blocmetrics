@@ -6,6 +6,7 @@ RSpec.describe RegisteredApplication, type: :model do
   
   # Association specs
   it { should belong_to(:user) }
+  it { should have_many(:events) }
   
   # Name validations
   it { should validate_presence_of(:name) }

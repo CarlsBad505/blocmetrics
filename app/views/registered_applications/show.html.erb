@@ -3,7 +3,11 @@
   <p><%= link_to @registered_application.url %></p>
   <%= link_to 'Edit', edit_registered_application_path(@registered_application), class: 'btn btn-info' %>
   <%= link_to 'Delete', @registered_application, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
-  
+  <ul>
+    <% @events.each do |k, v| %>
+    <li><%= k %> <%= v.count %></li>
+    <% end %>
+  </ul>
 
   
   <div>
