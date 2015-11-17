@@ -5,7 +5,7 @@
   <%= link_to 'Delete', @registered_application, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
   <ul>
     <% @events.each do |k, v| %>
-    <li><%= k %> <%= v.count %></li>
+    <p><strong>Event Name:</strong> <%= k %> <strong>Event Count:</strong> <%= v.count %></p>
     <% end %>
   </ul>
 

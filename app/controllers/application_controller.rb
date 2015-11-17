@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
   
   protected
   
+  def require_sign_in
+    unless current_user
+    flash[:error] = "You must be logged in to do that!"
+    redirect_to(new_user_session_path)
+    end
+  end
+  
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [:name]
     devise_parameter_sanitizer.for(:account_update) << [:name]
