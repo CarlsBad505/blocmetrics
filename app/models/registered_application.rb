@@ -9,6 +9,6 @@ class RegisteredApplication < ActiveRecord::Base
             on: :create,
             presence: true, 
             length: { minimum: 8 }, 
-            uniqueness: { case_sensitive: false },
-            format: { with: URL_REGEX }
+            uniqueness: { case_sensitive: false }
+            # format: { with: URL_REGEX }
 end
