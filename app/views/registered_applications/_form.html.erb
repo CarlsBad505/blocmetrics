@@ -23,6 +23,6 @@
   </div>
   <br>
   <div class="actions"> 
-    <button class="btn btn-primary"><% f.submit %>Add New Application</button>
+    <%= f.submit "#{@registered_application.id.nil? ? 'Add New Application' : 'Edit Application'}", class: "btn btn-primary" %>
   </div>
 <% end %>

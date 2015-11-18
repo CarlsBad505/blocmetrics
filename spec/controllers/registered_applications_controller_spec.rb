@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe RegisteredApplicationsController, type: :controller do
   let(:user) { User.create!(name: "john snow", email: "johnsnow@gmail.com", password: "winteriscoming") }
   let(:registered_application) { RegisteredApplication.create!(name: "YapBox", url: "www.yapbox.com", user: user) }
