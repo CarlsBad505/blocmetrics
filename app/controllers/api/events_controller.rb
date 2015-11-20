@@ -16,15 +16,17 @@ class API::EventsController < ApplicationController
     end
   end
   
+  def preflight
+    head 200
+  end
+  
   private
   
   def event_params
     params.require(:event).permit(:name)
   end
   
-  def preflight
-    head 200
-  end
+ 
   
   def set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
