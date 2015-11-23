@@ -19,8 +19,8 @@ Be careful the order you place this snippet within the file, as it can mess with
 - 
 ```
 var blocmetrics = {};
-  blocmetrics.report = function(event){
-    var event = {event: { name: event}};
+  blocmetrics.report = function(eventName){
+    var event = {event: { name: eventName}};
     var request = new XMLHttpRequest();
     request.open("POST", "http://hidden-anchorage-1106.herokuapp.com/api/events", true);
     request.setRequestHeader('Content-Type', 'application/json');

@@ -5,10 +5,13 @@
   <%= link_to 'Delete', @registered_application, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
   <ul>
     <% @events.each do |k, v| %>
-    <p><strong>Event Name:</strong> <%= k %> <strong>Event Count:</strong> <%= v.count %></p>
+    <p><strong>Event Name:</strong> <%= k %>
+    <strong>Event Count:</strong> <%= v.count %></p>
     <% end %>
   </ul>
-
+  
+  <%= pie_chart @registered_application.events.group(:name).count %>
+  <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
   
   <div>
     <br>
