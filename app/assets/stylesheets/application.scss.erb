@@ -15,3 +15,42 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+<%# used to pad the 'body' of application.html.erb %>
+body { 
+  padding-top: 70px; 
+}
+
+<%# meant to position the flash messages better: absolute positioning %>
+.flash-position {
+  position: absolute;
+}
+
+.navbar-default {
+  background-color: #333333;
+  border: none;
+}
+
+#nav-padding {
+  height: 70px;
+}
+  
+.nav-position {
+  margin: auto;
+}
+
+#nav-position > li {
+  position: relative;
+  top: 13px;
+  font-weight: bold;
+}
+  
+.hover-nav > li > a:hover {
+  color: #fff;
+  background-color: #4099ff;
+  font-weight: bold;
+}
+  
+.grow:hover { 
+  transform: scale(1.25,1.25); 
+}

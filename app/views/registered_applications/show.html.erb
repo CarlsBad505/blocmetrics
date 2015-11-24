@@ -1,21 +1,37 @@
-<div class="container">
-  <h2><%= @registered_application.name %></h2>
-  <p><%= link_to @registered_application.url %></p>
-  <%= link_to 'Edit', edit_registered_application_path(@registered_application), class: 'btn btn-info' %>
-  <%= link_to 'Delete', @registered_application, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
-  <ul>
-    <% @events.each do |k, v| %>
-    <p><strong>Event Name:</strong> <%= k %>
-    <strong>Event Count:</strong> <%= v.count %></p>
-    <% end %>
-  </ul>
+<div class="container body-show">
+  <div class="col-md-3">
+    <h1><%= @registered_application.name %></h1>
+    <p><%= link_to @registered_application.url %></p>
+    <%= link_to 'Edit', edit_registered_application_path(@registered_application), class: 'btn btn-info' %>
+    <%= link_to 'Delete', @registered_application, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+  </div>
   
-  <%= pie_chart @registered_application.events.group(:name).count %>
-  <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
+  <div class="table-responsive col-md-9">
+    <table class="align table-striped table-hover table-condensed">
+      <thead>
+        <tr>
+          <th id="th-style">Event Name</th>
+          <th id="th-style">Event Count</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @events.each do |k, v| %>
+        <tr>
+          <td><%= k %></td>
+          <td><%= v.count %></p></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
   
-  <div>
-    <br>
-    <p>This is where graphs and stuff will come in later :)</p>
-    <%= link_to 'Back To My Applications', registered_applications_path %>
+  <div class="col-md-12 body">
+    <%= pie_chart @registered_application.events.group(:name).count %>
+    <%= line_chart @registered_application.events.group(:created_at).count %>
+    
+    <div>
+      <%= link_to 'Back To My Applications', registered_applications_path %>
+    </div>
   </div>
 </div>

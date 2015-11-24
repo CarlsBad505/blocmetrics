@@ -1,4 +1,30 @@
-#index-table {
-  width: 50%;
+.body {
+  padding-top: 10px;
 }
 
+.body-show {
+  padding-top: 50px;
+}
+
+table.align {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#h1-align {
+  text-align: center;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: #C9D9F9;
+}
+
+#th-style {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td {
+   background-color: #F4F4F4;
+}
